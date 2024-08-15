@@ -16,6 +16,18 @@ namespace WinAppDriver
     public Capabilities desiredCapabilities;
   }
 
+  public class W3CNewSessionReq
+  {
+    [JsonProperty(Required = Required.DisallowNull)]
+    public W3CCapabilities desiredCapabilities;
+
+    public NewSessionReq GetReqType() { 
+      var ret = new NewSessionReq();
+      ret.desiredCapabilities = desiredCapabilities.GetBaseCapabilities();
+      return ret;
+    }
+  }
+
   public class SetImplicitTimeoutReq
   {
     public string type;

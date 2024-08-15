@@ -21,7 +21,7 @@ namespace WinAppDriver.Infra.CommandHandler
       return result;
     }
   }
-  class NewSessionHandler : CommandHandlerBase<NewSessionReq, NewSessionIntermediateResult>, ICommandHandler
+  class NewSessionHandler : CommandHandlerBase<NewSessionReq, NewSessionIntermediateResult, W3CNewSessionReq>, ICommandHandler
   {
     public object ExecuteCommand(ISessionManager sessionManager, string sessionId, object body, string elementId)
     {
